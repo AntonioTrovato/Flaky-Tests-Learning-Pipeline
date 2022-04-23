@@ -231,3 +231,47 @@ plt.legend(loc='lower right')
 plt.title("SVM Accuracy")
 plt.ylim([0.0,1.0])
 plt.show()
+
+
+'''Il modello che si adatta meglio al dateset risulta essere il random forest, eseguo il tuning degli iperparametri'''
+
+
+#TEST
+test_set_copy=test_set.copy()
+
+'''
+Tolgo dal dataset le fature inutili come nameProject, testCase, id.
+Successivamente divido le lable dai campioni salvandole in un altra struttura dati.
+'''
+test_dataset=test_set.drop(['id','nameProject','testCase','isFlaky'],axis=1)
+test_dataset_lable=test_set['isFlaky']
+print(test_dataset_lable.describe())
+test_dataset_lable=test_dataset_lable.astype(int)
+
+
+X_test_dataset=sc.transform(test_dataset)
+principalCompontent=pca.transform(X_test_dataset)
+pca_test_dataset=pandas.DataFrame(principalCompontent,columns=['Principal Component 1','Principal Component 2','Principal Component  3',
+                                                                'Principal Component 4','Principal Component 5','Principal Component 6',
+                                                                'Principal Component 7','Principal Component 8','Principal Component 9',
+
+                                                                'Principal Component 10'])
+randomForest=RandomForestClassifier(n_estimators=40,class_weight='balanced_subsample')
+randomForest.fit(X_train_dataset,Y_train_dataset)
+test_predict=randomForest.predict(pca_test_dataset)
+confmat=confusion_matrix(y_true=test_dataset_lable,y_pred=test_predict)
+
+
+fig, ax = plt.subplots(figsize=(2.5, 2.5))
+ax.matshow(confmat, cmap=plt.cm.Blues, alpha=0.1)
+for i in range(confmat.shape[0]):
+    for j in range(confmat.shape[1]):
+        ax.text(x=j,y=i, s=confmat[i,j], va='center', ha='center')
+plt.xlabel('predict label')
+plt.ylabel('true label')
+plt.show()
+
+print("Accuracy: %.3f" %accuracy_score(y_true=test_dataset_lable,y_pred=test_predict))
+print("Precision: %.3f" %precision_score(y_true=test_dataset_lable,y_pred=test_predict))
+print("Recall: %.3f" %recall_score(y_true=test_dataset_lable,y_pred=test_predict))
+print("F1: %.3f" %f1_score(y_true=test_dataset_lable,y_pred=test_predict))
