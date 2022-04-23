@@ -98,3 +98,136 @@ plt.ylabel('y')
 plt.scatter(X_train_dataset.iloc[:, 0], X_train_dataset.iloc[:, 1], marker='o', c=Y_train_dataset,
            s=25, edgecolor='k', cmap=plt.cm.coolwarm)
 plt.show()
+
+#Provo perceptron
+train_sizes, train_scores, test_scores =learning_curve(estimator=Perceptron(),
+                                                       X=X_train_dataset,
+                                                       y=Y_train_dataset,
+                                                       train_sizes=np.linspace(0.1, 1.0, 10),
+                                                       cv=10,
+                                                       n_jobs=1)
+
+
+
+train_mean=np.mean(train_scores,axis=1)
+train_std=np.std(train_scores,axis=1)
+test_mean=np.mean(test_scores,axis=1)
+test_std=np.std(test_scores,axis=1)
+
+plt.plot(train_sizes,train_mean,color='blue',marker='o',markersize=5,label='training accuracy')
+plt.fill_between(train_sizes,train_mean+train_std,train_mean-train_std,alpha=0.15,color='blue')
+plt.plot(train_sizes,test_mean,color='green',linestyle='--',marker='s',markersize=5,label='validation accuracy')
+plt.fill_between(train_sizes,test_mean+test_std,test_mean-test_std,alpha=0.15, color='green')
+plt.grid()
+plt.xlabel('Number of training samplel')
+plt.ylabel('Accuracy')
+plt.legend(loc='lower right')
+plt.title("Perceptron Accuracy")
+plt.ylim([0.0,1.0])
+plt.show()
+
+#Provo la regressione logica
+train_sizes, train_scores, test_scores =learning_curve(estimator=LogisticRegression(),
+                                                       X=X_train_dataset,
+                                                       y=Y_train_dataset,
+                                                       train_sizes=np.linspace(0.1, 1.0, 10),
+                                                       cv=10,
+                                                       n_jobs=1)
+
+
+
+train_mean=np.mean(train_scores,axis=1)
+train_std=np.std(train_scores,axis=1)
+test_mean=np.mean(test_scores,axis=1)
+test_std=np.std(test_scores,axis=1)
+
+plt.plot(train_sizes,train_mean,color='blue',marker='o',markersize=5,label='training accuracy')
+plt.fill_between(train_sizes,train_mean+train_std,train_mean-train_std,alpha=0.15,color='blue')
+plt.plot(train_sizes,test_mean,color='green',linestyle='--',marker='s',markersize=5,label='validation accuracy')
+plt.fill_between(train_sizes,test_mean+test_std,test_mean-test_std,alpha=0.15, color='green')
+plt.grid()
+plt.xlabel('Number of training samplel')
+plt.ylabel('Accuracy')
+plt.legend(loc='lower right')
+plt.title("Logistic Regression Accuracy")
+plt.ylim([0.0,1.0])
+plt.show()
+
+
+#Cross validation decision tree
+train_sizes, train_scores, test_scores =learning_curve(estimator=DecisionTreeClassifier(),
+                                                       X=X_train_dataset,
+                                                       y=Y_train_dataset,
+                                                       train_sizes=np.linspace(0.1, 1.0, 10),
+                                                       cv=10,
+                                                       n_jobs=1)
+
+train_mean=np.mean(train_scores,axis=1)
+train_std=np.std(train_scores,axis=1)
+test_mean=np.mean(test_scores,axis=1)
+test_std=np.std(test_scores,axis=1)
+
+plt.plot(train_sizes,train_mean,color='blue',marker='o',markersize=5,label='training accuracy')
+plt.fill_between(train_sizes,train_mean+train_std,train_mean-train_std,alpha=0.15,color='blue')
+plt.plot(train_sizes,test_mean,color='green',linestyle='--',marker='s',markersize=5,label='validation accuracy')
+plt.fill_between(train_sizes,test_mean+test_std,test_mean-test_std,alpha=0.15, color='green')
+plt.grid()
+plt.xlabel('Number of training samplel')
+plt.ylabel('Accuracy')
+plt.legend(loc='lower right')
+plt.title("Decision-Tree Accuracy")
+plt.ylim([0.0,1.0])
+plt.show()
+
+
+#Cross validation random forest
+train_sizes, train_scores, test_scores =learning_curve(estimator=RandomForestClassifier(n_estimators=15),
+                                                       X=X_train_dataset,
+                                                       y=Y_train_dataset,
+                                                       train_sizes=np.linspace(0.1, 1.0, 10),
+                                                       cv=10,
+                                                       n_jobs=1)
+
+train_mean=np.mean(train_scores,axis=1)
+train_std=np.std(train_scores,axis=1)
+test_mean=np.mean(test_scores,axis=1)
+test_std=np.std(test_scores,axis=1)
+
+plt.plot(train_sizes,train_mean,color='blue',marker='o',markersize=5,label='training accuracy')
+plt.fill_between(train_sizes,train_mean+train_std,train_mean-train_std,alpha=0.15,color='blue')
+plt.plot(train_sizes,test_mean,color='green',linestyle='--',marker='s',markersize=5,label='validation accuracy')
+plt.fill_between(train_sizes,test_mean+test_std,test_mean-test_std,alpha=0.15, color='green')
+plt.grid()
+plt.xlabel('Number of training samplel')
+plt.ylabel('Accuracy')
+plt.legend(loc='lower right')
+plt.title("Random Forest Accuracy")
+plt.ylim([0.0,1.0])
+plt.show()
+
+
+
+#Cross validation SVM
+
+train_sizes, train_scores, test_scores =learning_curve(estimator=SVC(kernel='rbf',C=1.0,random_state=0, gamma=2),
+                                                       X=X_train_dataset,
+                                                       y=Y_train_dataset,
+                                                       cv=10,
+                                                       n_jobs=1)
+
+train_mean=np.mean(train_scores,axis=1)
+train_std=np.std(train_scores,axis=1)
+test_mean=np.mean(test_scores,axis=1)
+test_std=np.std(test_scores,axis=1)
+
+plt.plot(train_sizes,train_mean,color='blue',marker='o',markersize=5,label='training accuracy')
+plt.fill_between(train_sizes,train_mean+train_std,train_mean-train_std,alpha=0.15,color='blue')
+plt.plot(train_sizes,test_mean,color='green',linestyle='--',marker='s',markersize=5,label='validation accuracy')
+plt.fill_between(train_sizes,test_mean+test_std,test_mean-test_std,alpha=0.15, color='green')
+plt.grid()
+plt.xlabel('Number of training samplel')
+plt.ylabel('Accuracy')
+plt.legend(loc='lower right')
+plt.title("SVM Accuracy")
+plt.ylim([0.0,1.0])
+plt.show()
