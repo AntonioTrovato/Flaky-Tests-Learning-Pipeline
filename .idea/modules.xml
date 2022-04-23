@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Flaky Tests Learning Pipeline.iml" filepath="$PROJECT_DIR$/.idea/Flaky Tests Learning Pipeline.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/Flaky-Tests-Learning-Pipeline.iml" filepath="$PROJECT_DIR$/.idea/Flaky-Tests-Learning-Pipeline.iml" />
+>>>>>>> origin/main
     </modules>
   </component>
 </project>
