@@ -1,3 +1,6 @@
+import os
+import numpy as np
+import pandas
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
@@ -13,6 +16,7 @@ from sklearn.model_selection import learning_curve
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import precision_score,recall_score,f1_score,accuracy_score
 from sklearn.linear_model import LogisticRegression
+
 
 
 DATASET_NAME='flakeFlagger.csv'
