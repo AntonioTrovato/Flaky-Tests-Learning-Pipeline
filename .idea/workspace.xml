@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="125450f3-c32b-4aa3-829f-679881c0e629" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/FlakyPipeline.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/FlakyPipeline.ipynb" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/FlakyPipeline.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlakyPipeline2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flakeFlagger.csv" beforeDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,14 +37,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flaky Tests Learning Pipeline" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
+<<<<<<< Updated upstream
       <option name="SDK_HOME" value="C:\Users\angel\Desktop\SongAnalysisML\venv\Scripts\python.exe" />
+=======
+      <option name="SDK_HOME" value="C:\Users\angel\Desktop\Flaky-Tests-Learning-Pipeline\venv\Scripts\python.exe" />
+>>>>>>> Stashed changes
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -53,6 +63,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -63,14 +78,69 @@
       <option name="presentableId" value="Default" />
       <updated>1651065861405</updated>
       <workItem from="1651065870241" duration="648000" />
+<<<<<<< Updated upstream
       <workItem from="1652805931514" duration="650000" />
+=======
+      <workItem from="1651066904952" duration="50000" />
+      <workItem from="1651069832107" duration="7721000" />
+      <workItem from="1652783865017" duration="12064000" />
+      <workItem from="1653951073021" duration="904000" />
+      <workItem from="1653951999211" duration="190000" />
+    </task>
+    <task id="LOCAL-00001" summary="Prova branch">
+      <created>1651066767763</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651066767763</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Eliminazione .txt">
+      <created>1651066801236</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651066801236</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Commit .xml">
+      <created>1651066927874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651066927875</updated>
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< Updated upstream
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Flaky_Tests_Learning_Pipeline$Main.coverage" NAME="Main Coverage Results" MODIFIED="1652806021769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Sistemazione librerie." />
+    <MESSAGE value="Prova branch" />
+    <MESSAGE value="Eliminazione .txt" />
+    <MESSAGE value="Commit .xml" />
+    <MESSAGE value="I've added a neural network model to the project, in particular I've implemented a Multi-layer Perceptron Classifier." />
+    <option name="LAST_COMMIT_MESSAGE" value="I've added a neural network model to the project, in particular I've implemented a Multi-layer Perceptron Classifier." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Flaky_Tests_Learning_Pipeline$main.coverage" NAME="main Coverage Results" MODIFIED="1653952101145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Flaky_Tests_Learning_Pipeline$Main.coverage" NAME="Main Coverage Results" MODIFIED="1651079626329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+>>>>>>> Stashed changes
   </component>
 </project>
