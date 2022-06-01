@@ -1,0 +1,11 @@
+<<<<<<< Updated upstream
+artifact_location: file:///C:/Users/angel/Desktop/Flaky-Tests-Learning-Pipeline/mlruns/0
+experiment_id: '0'
+lifecycle_stage: active
+name: Default
+=======
+artifact_location: ./mlruns/0
+experiment_id: '0'
+lifecycle_stage: active
+name: FlakyPipeline
+>>>>>>> Stashed changes
