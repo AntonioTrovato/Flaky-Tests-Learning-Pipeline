@@ -5,8 +5,8 @@ from imblearn.over_sampling import SMOTE
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import Normalizer
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
-import mlflow
-import mlflow.sklearn
+#import mlflow
+#import mlflow.sklearn
 from urllib.parse import urlparse
 import pickle
 
@@ -50,32 +50,32 @@ class FlakyPipeline:
         #Fase di data balancing
         X_train_set, y_train_set = self.__SMOTE(X=X_train_set, y=y_train_set)
 
-        with mlflow.start_run(experiment_id='0'):
-            self.classificatore = RandomForestClassifier(criterion='entropy', n_estimators=150)
-            self.classificatore.fit(X=X_train_set, y=y_train_set)
-            print("FIT ESEGUITA CORRETTAMENTE")
-            # Save Norm and Model to disk
-            pickle.dump(self.normalizer, open('finalized_norm.sav', 'wb'))
-            pickle.dump(self.classificatore, open('finalized_model.sav', 'wb'))
-            pickle.dump(drop_col, open('finalized_drop_col.sav', 'wb'))
-            print("NORM, FEATURE SELECT E MODEL SALVATI")
+        #with mlflow.start_run(experiment_id='0'):
+        self.classificatore = RandomForestClassifier(criterion='entropy', n_estimators=150)
+        self.classificatore.fit(X=X_train_set, y=y_train_set)
+        print("FIT ESEGUITA CORRETTAMENTE")
+        # Save Norm and Model to disk
+        pickle.dump(self.normalizer, open('finalized_norm.sav', 'wb'))
+        pickle.dump(self.classificatore, open('finalized_model.sav', 'wb'))
+        pickle.dump(drop_col, open('finalized_drop_col.sav', 'wb'))
+        print("NORM, FEATURE SELECT E MODEL SALVATI")
 
-            X_test_set = test_set.drop(['isFlaky'], axis=1)
-            y_test_set = test_set['isFlaky']
-            y_test_set = y_test_set.to_numpy()
+        X_test_set = test_set.drop(['isFlaky'], axis=1)
+        y_test_set = test_set['isFlaky']
+        y_test_set = y_test_set.to_numpy()
 
-            predict_lable = self.predict(X=X_test_set)
-            print("PRESTAZIONI SU TEST SET")
-            self.__getReport(accuracy=accuracy_score(y_true=y_test_set, y_pred=predict_lable),
-                             precision=precision_score(y_true=y_test_set, y_pred=predict_lable),
-                             recall=recall_score(y_true=y_test_set, y_pred=predict_lable),
-                             f1=f1_score(y_true=y_test_set, y_pred=predict_lable))
+        predict_lable = self.predict(X=X_test_set)
+        print("PRESTAZIONI SU TEST SET")
+        self.__getReport(accuracy=accuracy_score(y_true=y_test_set, y_pred=predict_lable),
+                         precision=precision_score(y_true=y_test_set, y_pred=predict_lable),
+                         recall=recall_score(y_true=y_test_set, y_pred=predict_lable),
+                         f1=f1_score(y_true=y_test_set, y_pred=predict_lable))
 
-            tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
-            if tracking_url_type_store != "file":
-                mlflow.sklearn.log_model(self.classificatore, "model", registered_model_name='RandomForest')
-            else:
-                mlflow.sklearn.log_model(self.classificatore, 'model')
+        '''tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
+        if tracking_url_type_store != "file":
+            mlflow.sklearn.log_model(self.classificatore, "model", registered_model_name='RandomForest')
+        else:
+            mlflow.sklearn.log_model(self.classificatore, 'model')'''
 
     def predict(self, X):
         load_norm = pickle.load(open('finalized_norm.sav', 'rb'))
@@ -155,10 +155,10 @@ class FlakyPipeline:
         print("Precision: %.3f" % precision)
         print("Recall: %.3f" % recall)
         print("F1: %.3f" % f1)
-        mlflow.log_metric("Accuracy", accuracy)
+        '''mlflow.log_metric("Accuracy", accuracy)
         mlflow.log_metric("Precision", precision)
         mlflow.log_metric("Recall", recall)
         mlflow.log_metric("F1", f1)
         dict_param = self.classificatore.get_params(deep=True)
         for parm in dict_param:
-            mlflow.log_param(parm, dict_param.get(parm))
+            mlflow.log_param(parm, dict_param.get(parm))'''
