@@ -21,6 +21,6 @@ if __name__=="__main__":
     dataset_copy = dataset_copy.drop(['Unnamed: 0', 'index'], axis=1)  # Rimuovo dal dataset gli indici
     flakyPipeline=FlakyPipeline()
     flakyPipeline.fit(dataset_copy)
-    use_interpretable_model()
+    use_interpretable_model(dataset_copy)
 
 

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/angel/Desktop/Flaky-Tests-Learning-Pipeline/mlruns/0/aa63fd0d28b04b31966d3f0fe41019d2/artifacts
+end_time: 1654558256768
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: aa63fd0d28b04b31966d3f0fe41019d2
+run_uuid: aa63fd0d28b04b31966d3f0fe41019d2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1654558248887
+status: 3
+tags: []
+user_id: angel
